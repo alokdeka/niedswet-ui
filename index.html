@@ -61,37 +61,21 @@
     </nav>
 
     <!-- Carousel -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="./asset/images/images/slider.png" class="d-block w-100" alt="...">
+    <section class="carousel">
+        <div class="main-carousel owl-carousel owl-theme">
+            <div class="item">
+                <img src="./asset/images/images/slider.png" class="d-block w-100" alt="Carousel">
             </div>
-            <div class="carousel-item">
-                <img src="./asset/images/images/slider.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="./asset/images/images/slider.png" class="d-block w-100" alt="...">
+            <div class="item">
+                <img src="./asset/images/images/slider.png" class="d-block w-100" alt="Carousel">
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
+
+        <div class="navigation">
+            <div class="customPrevBtnMain arrow"><i class="fa-solid fa-angle-left"></i></div>
+            <div class="customNextBtnMain arrow"><i class="fa-solid fa-angle-right"></i></div>
+        </div>
+    </section>
 
     <section class="notifications">
         <div class="container">
@@ -643,126 +627,7 @@
     <script src="./vendor/bootstrap5/js/bootstrap.bundle.min.js"></script>
     <script src="./vendor/owlcarousel/owl.carousel.min.js"></script>
     <script src="./vendor/magnific/jquery.magnific-popup.min.js"></script>
-
-    <script>
-        // Campaign carousel
-        $('.campaigns-carousel').owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: false,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 2
-                },
-                1000: {
-                    items: 3
-                }
-            }
-        });
-
-        // Custom navigation for campaigns carousel
-        var owl = $('.campaigns-carousel');
-        owl.owlCarousel();
-        // Go to the next item
-        $('.customNextBtn').click(function () {
-            owl.trigger('next.owl.carousel');
-        })
-        // Go to the previous item
-        $('.customPrevBtn').click(function () {
-            // With optional speed parameter
-            // Parameters has to be in square bracket '[]'
-            owl.trigger('prev.owl.carousel', [300]);
-        });
-
-
-        $('.gallery').each(function () { // the containers for all your galleries
-            $(this).magnificPopup({
-                delegate: 'a', // the selector for gallery item
-                type: 'image',
-                gallery: {
-                    enabled: true
-                },
-                zoom: {
-                    enabled: true, // By default it's false, so don't forget to enable it
-
-                    duration: 300, // duration of the effect, in milliseconds
-                    easing: 'ease-in-out',
-                    opener: function (openerElement) {
-                        return openerElement.is('img') ? openerElement : openerElement.find('img');
-                    }
-                }
-
-            });
-        });
-
-        // Gallery carousel
-        $('.gallery-carousel').owlCarousel({
-            center: true,
-            loop: true,
-            margin: 10,
-            nav: false,
-            responsive: {
-                0: {
-                    center: false,
-                    items: 1
-                },
-                600: {
-                    items: 3
-                },
-                1000: {
-                    items: 3
-                }
-            }
-        });
-        // Custom navigation for gallery carousel
-        var owl2 = $('.gallery-carousel');
-        owl2.owlCarousel();
-        // Go to the next item
-        $('.customNextBtnGallery').click(function () {
-            owl2.trigger('next.owl.carousel');
-        })
-        // Go to the previous item
-        $('.customPrevBtnGallery').click(function () {
-            // With optional speed parameter
-            // Parameters has to be in square bracket '[]'
-            owl2.trigger('prev.owl.carousel', [300]);
-        });
-
-        // Work carousel
-        $('.work-carousel').owlCarousel({
-            loop: true,
-            margin: 10,
-            items: 1,
-            nav: false,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 1
-                },
-                1000: {
-                    items: 1
-                }
-            }
-        });
-        // Custom navigation for work carousel
-        var owl3 = $('.work-carousel');
-        owl3.owlCarousel();
-        // Go to the next item
-        $('.customNextBtnOurWork').click(function () {
-            owl3.trigger('next.owl.carousel');
-        })
-        // Go to the previous item
-        $('.customPrevBtnOurWork').click(function () {
-            // With optional speed parameter
-            // Parameters has to be in square bracket '[]'
-            owl3.trigger('prev.owl.carousel', [300]);
-        });
-    </script>
+    <script src="./asset/js/main.js"></script>
 </body>
 
 </html>
